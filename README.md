@@ -1,4 +1,4 @@
-# SwipeMenuJS
+# SwipeMenu_JS
 
 <p align="center">
   <img src="github/images/main.png" width="500px">
@@ -6,7 +6,7 @@
 
 <p align="center">
 	<a href="examples/swipe_menu.html">Usage Example</a> | 
-	<a href="https://superzombi.github.io/SwipeMenuJS/examples/swipe_menu.html">Preview</a>
+	<a href="https://superzombi.github.io/SwipeMenu_JS/examples/swipe_menu.html">Preview</a>
 </p>
 
 ### Usage:
@@ -14,8 +14,8 @@
 #### 1) Import required files.
 ```html
 <head>
-    <link href="https://superzombi.github.io/SwipeMenuJS/swipe_menu.css" rel="stylesheet">
-    <script src="https://superzombi.github.io/SwipeMenuJS/swipe_menu.js"></script>
+    <link href="https://superzombi.github.io/SwipeMenu_JS/swipe_menu.css" rel="stylesheet">
+    <script src="https://superzombi.github.io/SwipeMenu_JS/swipe_menu.js"></script>
 </head>
 ```
 
@@ -93,7 +93,7 @@ myMenu.init('theme', 'dark', onchange=(target, old_element)=>{
 
 <p align="center">
 	<a href="examples/example.html">Full Example</a> | 
-	<a href="https://superzombi.github.io/SwipeMenuJS/examples/example.html">Preview</a>
+	<a href="https://superzombi.github.io/SwipeMenu_JS/examples/example.html">Preview</a>
 </p>
 
 #### 8) You can also update the value.
