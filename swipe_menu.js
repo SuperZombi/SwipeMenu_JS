@@ -39,6 +39,7 @@ function swipeMenu(menuArea, side='left'){
 				menu.style.minHeight = ""
 				menuArea.style.minHeight = ""
 			}
+			target.addEventListener('close', _=> {target.close()});
 		})
 		menu.querySelectorAll("li[href]").forEach(li=>{
 			if (li.getAttribute("target")){
@@ -55,7 +56,7 @@ function swipeMenu(menuArea, side='left'){
 	})
 	menuArea.exitAllSubMenus = _=>{
 		menuArea.querySelectorAll(".menu, .submenu").forEach(menu=>{
-			menu.close();
+			menu.dispatchEvent(new Event('close'));
 		})
 	}
 	menuArea.init = (name, value, change_handler = _=>{}) => {
