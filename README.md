@@ -4,6 +4,11 @@
   <img src="github/images/main.png" width="500px">
 </p>
 
+<p align="center">
+	<a href="examples/swipe_menu.html">Usage Example</a> | 
+	<a href="https://superzombi.github.io/SwipeMenuJS/examples/swipe_menu.html">Preview</a>
+</p>
+
 ### Usage:
 
 #### 1) Import required files.
@@ -86,6 +91,11 @@ myMenu.init('theme', 'dark', onchange=(target, old_element)=>{
 })
 ```
 
+<p align="center">
+	<a href="examples/example.html">Full Example</a> | 
+	<a href="https://superzombi.github.io/SwipeMenuJS/examples/example.html">Preview</a>
+</p>
+
 #### 8) You can also update the value.
 ```javascript
 myMenu.update('language', 'ru')
@@ -95,3 +105,7 @@ myMenu.update('language', 'ru')
 ```javascript
 myMenu.exitAllSubMenus()
 ```
+
+<hr>
+
+#### <a href="https://www.donationalerts.com/r/super_zombi">Support the project</a>
