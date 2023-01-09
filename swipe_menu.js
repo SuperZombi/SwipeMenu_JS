@@ -1,10 +1,11 @@
-function swipeMenu(menuArea){
+function swipeMenu(menuArea, side='left'){
 	let back_button = menuArea.querySelector(".back_button")
 	menuArea.querySelectorAll(".submenu").forEach(el=>{
 		let back = document.createElement("li")
 		back.classList.add("back_button")
 		back.onclick = _=>{
-			el.style.left = ""
+			if (side=="right"){el.style.right = "-100%"}
+			else {el.style.left = "-100%"}
 			el.dispatchEvent(new Event('submenu_close'));
 		}
 		back.innerHTML = back_button.innerHTML;
@@ -18,15 +19,23 @@ function swipeMenu(menuArea){
 	menuArea.querySelectorAll(".menu, .submenu").forEach(menu=>{
 		menu.querySelectorAll("li[submenu]").forEach(sub=>{
 			let target = menuArea.querySelector(`.submenu[name=${sub.getAttribute("submenu")}]`)
+			if (side=="right"){
+				target.style.right = "-100%"
+			}
+			else {
+				target.style.left = "-100%"
+			}
 			sub.onclick = _=>{
 				menu.style.filter = "brightness(0.25)"
-				target.style.left = 0
+				if (side=="right"){target.style.right = 0}
+				else {target.style.left = 0}
 				menu.style.minHeight = target.scrollHeight + "px"
 				menuArea.style.minHeight = target.scrollHeight + "px"
 			}
 			target.addEventListener('submenu_close', _=> {
 				menu.style.filter = ""
-				target.style.left = ""
+				if (side=="right"){target.style.right = "-100%"}
+				else {target.style.left = "-100%"}
 				menu.style.minHeight = ""
 				menuArea.style.minHeight = ""
 			});
