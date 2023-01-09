@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Swipe Menu JS</title>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+	<link href="https://superzombi.github.io/SwipeMenuJS/swipe_menu.css" rel="stylesheet">
+	<script src="https://superzombi.github.io/SwipeMenuJS/swipe_menu.js"></script>
+</head>
+<body class="dark">
+
+	<div class="swipe-menu" id="myMenu">
+		<div class="back_button">
+			<i class="fa-solid fa-circle-left"></i>
+			Back
+		</div>
+
+		<ul class="menu">
+			<li class="menu_title main-title">
+				<i class="fa-solid fa-bars"></i>
+				Menu
+			</li>
+			<li submenu="language">
+				<i class="fa-solid fa-globe"></i>
+				Language
+			</li>
+			<li submenu="theme">
+				<i class="fa-solid fa-palette"></i>
+				Theme
+			</li>
+		</ul>
+
+		<ul class="submenu" name="theme">
+			<li class="menu_title">
+				<i class="fa-solid fa-palette"></i>
+				Theme:
+			</li>
+			<li value="light">
+				<i class="fa-solid fa-sun"></i>
+				Light
+			</li>
+			<li value="dark">
+				<i class="fa-solid fa-moon"></i>
+				Dark
+			</li>
+		</ul>
+
+		<ul class="submenu" name="language">
+			<li class="menu_title">
+				<i class="fa-solid fa-globe"></i>
+				Language:
+			</li>
+			<li value="en">English</li>
+			<li value="ru">Русский</li>
+			<li value="uk">Українська</li>
+		</ul>
+	</div>
+
+<script>
+	var myMenu = document.getElementById("myMenu")
+	swipeMenu(myMenu)
+
+	myMenu.init('theme', 'dark', onchange=(target, old_element)=>{
+		document.body.classList.remove(old_element.getAttribute("value"))
+		document.body.classList.add(target.getAttribute("value"))
+	})
+	myMenu.init('language', 'en')
+</script>
+</body>
+</html>
