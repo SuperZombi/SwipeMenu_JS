@@ -88,7 +88,9 @@
 		document.body.classList.remove(old_element.getAttribute("value"))
 		document.body.classList.add(target.getAttribute("value"))
 	})
-	myMenu.init('language', 'en')
+	myMenu.init('language', 'en', onchange=_=>{
+		myMenu.exitAllSubMenus();
+	})
 	myMenu.init('account', 'User')
 
 	// myMenu.update('language', 'ru')
