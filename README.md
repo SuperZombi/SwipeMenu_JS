@@ -121,6 +121,13 @@ You can also add `target="_blank"`.
 </li>
 ```
 
+#### 12) To display selected values on the right, specify the class `space-between` for `swipe-menu`.
+```html
+<div class="swipe-menu space-between">
+
+</div>
+```
+
 <hr>
 
 #### <a href="https://www.donationalerts.com/r/super_zombi">Support the project</a>
