@@ -78,6 +78,11 @@
 var myMenu = document.getElementById("myMenu")
 swipeMenu(myMenu)
 ```
+If you want the menu to be swiped from the right, specify this.
+```javascript
+var myMenu = document.getElementById("myMenu")
+swipeMenu(myMenu, 'right')
+```
 
 #### 7) Set the default value.
 ```javascript
@@ -126,12 +131,6 @@ You can also add `target="_blank"`.
 <div class="swipe-menu space-between">
 
 </div>
-```
-
-#### 13) If you want the menu to be swiped from the right, specify this at <a href="#6-initialize-swipemenujs">initialization</a>.
-```javascript
-var myMenu = document.getElementById("myMenu")
-swipeMenu(myMenu, 'right')
 ```
 
 <hr>
