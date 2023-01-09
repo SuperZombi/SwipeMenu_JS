@@ -106,6 +106,21 @@ myMenu.update('language', 'ru')
 myMenu.exitAllSubMenus()
 ```
 
+#### 10) To insert a link, you must specify the `href` attribute.
+```html
+<li href="#account">
+	Account
+</li>
+```
+You can also add `target="_blank"`.
+
+#### 11) To add a selected value for an element that does not have a submenu, specify a name for it.
+```html
+<li name="account">
+	Account
+</li>
+```
+
 <hr>
 
 #### <a href="https://www.donationalerts.com/r/super_zombi">Support the project</a>
