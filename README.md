@@ -83,6 +83,10 @@ If you want the menu to be swiped from the right, specify this.
 var myMenu = document.getElementById("myMenu")
 swipeMenu(myMenu, 'right')
 ```
+<p align="center">
+	<a href="examples/right_swipe.html">Right swipe example</a> | 
+	<a href="https://superzombi.github.io/SwipeMenu_JS/examples/right_swipe.html">Preview</a>
+</p>
 
 #### 7) Set the default value.
 ```javascript
