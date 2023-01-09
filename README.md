@@ -128,7 +128,7 @@ You can also add `target="_blank"`.
 </div>
 ```
 
-#### 13) If you want the menu to be swiped from the right, specify this at <a href="#6-initialize-swipemenujs">initialization</>.
+#### 13) If you want the menu to be swiped from the right, specify this at <a href="#6-initialize-swipemenujs">initialization</a>.
 ```javascript
 var myMenu = document.getElementById("myMenu")
 swipeMenu(myMenu, 'right')
