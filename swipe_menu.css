@@ -1,0 +1,103 @@
+.swipe-menu{
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	min-height: 0;
+	background: white;
+	color: black;
+	font-family: sans-serif;
+	transition: 0.3s;
+}
+.dark .swipe-menu{
+	background: #282a36;
+	color: white;
+}
+.swipe-menu > .back_button{
+	display: none;
+}
+.swipe-menu ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	background: inherit;
+	height: 100%;
+	width: 100%;
+	min-height: 0;
+	transition: filter 0.5s, min-height 0.3s;
+	white-space: nowrap;
+}
+.swipe-menu ul li{
+	padding: 15px;
+	border-bottom: 1px solid grey;
+	transition: 0.3s;
+	cursor: pointer;
+	color: var(--text-color);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.swipe-menu ul li a{
+	text-decoration: none;
+	color: var(--text-color);
+}
+.swipe-menu ul li:last-child{
+	border-bottom: 0;
+}
+.swipe-menu ul li > i{
+	width: 18px;
+	height: 18px;
+}
+.swipe-menu ul li:hover{
+	background: lightgrey;
+}
+.dark .swipe-menu ul li:hover{
+	background: #405070;
+}
+.swipe-menu ul li.menu_title{
+	pointer-events: none;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1em;
+	justify-content: center;
+}
+.swipe-menu ul li > .helper{
+	font-size: 0.9em;
+	color: grey;
+}
+.space-between.swipe-menu ul li > .helper{
+	margin-left: auto;
+}
+.swipe-menu ul li.selected{
+	background: #28bcff;
+}
+.swipe-menu ul li.selected:hover{
+	background: #00a3ff;
+}
+.dark .swipe-menu ul li.selected{
+	background: #005f94;
+}
+.dark .swipe-menu ul li.selected:hover{
+	background: #00446a;
+}
+.swipe-menu .submenu{
+	position: absolute;
+	transition: left 0.5s;
+	top: 0;
+	left: -100%;
+}
+.back_button{
+	background: lightgrey;
+}
+.back_button:hover{
+	background: #ababab !important;
+}
+.dark .back_button{
+	background: #323241;
+}
+.dark .back_button:hover{
+	background: #576c97 !important;
+}
+
+.dark .swipe-menu ul li > .helper{
+	color: lightgrey;
+}
