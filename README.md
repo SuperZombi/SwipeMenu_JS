@@ -1,5 +1,9 @@
 # SwipeMenuJS
 
+<p align="center">
+  <img src="github/images/main.png" width="500px">
+</p>
+
 ### Usage:
 
 #### 1) Import required files.
