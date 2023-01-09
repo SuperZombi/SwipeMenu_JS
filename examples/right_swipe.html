@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Swipe Menu JS</title>
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+	<link href="https://superzombi.github.io/SwipeMenu_JS/swipe_menu.css" rel="stylesheet">
+	<script src="https://superzombi.github.io/SwipeMenu_JS/swipe_menu.js"></script>
+	<style>
+		body{
+			background: aliceblue;
+		}
+		#myMenu{
+			border-radius: 10px;
+			max-width: 500px;
+			margin: auto;
+			filter: drop-shadow(2px 4px 6px black);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="swipe-menu space-between" id="myMenu">
+		<div class="back_button">
+			<i class="fa-solid fa-circle-left"></i>
+			Back
+		</div>
+
+		<ul class="menu">
+			<li class="menu_title">
+				<i class="fa-solid fa-bars"></i>
+				Menu
+			</li>
+			<li href="#account" name="account">
+				<i class="fa-solid fa-user"></i>
+				Account
+			</li>
+
+			<li submenu="appearance" name="appearance">
+				<i class="fa-solid fa-brush"></i>
+				Appearance
+			</li>
+		</ul>
+
+		<ul class="submenu" name="appearance">
+			<li class="menu_title">
+				<i class="fa-solid fa-palette"></i>
+				Appearance:
+			</li>
+			<li submenu="language">
+				<i class="fa-solid fa-globe"></i>
+				Language
+			</li>
+			<li submenu="theme">
+				<i class="fa-solid fa-palette"></i>
+				Theme
+			</li>
+		</ul>
+
+		<ul class="submenu" name="theme">
+			<li class="menu_title">
+				<i class="fa-solid fa-palette"></i>
+				Theme:
+			</li>
+			<li value="light">
+				<i class="fa-solid fa-sun"></i>
+				Light
+			</li>
+			<li value="dark">
+				<i class="fa-solid fa-moon"></i>
+				Dark
+			</li>
+		</ul>
+
+		<ul class="submenu" name="language">
+			<li class="menu_title">
+				<i class="fa-solid fa-globe"></i>
+				Language:
+			</li>
+			<li value="en">English</li>
+			<li value="ru">Русский</li>
+			<li value="uk">Українська</li>
+			<li value="fr">Français</li>
+		</ul>
+	</div>
+
+<script>
+	var myMenu = document.getElementById("myMenu")
+	swipeMenu(myMenu, 'right')
+
+	let user_theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+	document.body.classList.add(user_theme)
+
+	myMenu.init('theme', user_theme, onchange=(target, old_element)=>{
+		document.body.classList.remove(old_element.getAttribute("value"))
+		document.body.classList.add(target.getAttribute("value"))
+	})
+	myMenu.init('language', 'en', onchange=el=>{
+		el.parentElement.close();
+	})
+	myMenu.init('account', 'User')
+</script>
+</body>
+</html>
