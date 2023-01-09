@@ -6,7 +6,7 @@ function swipeMenu(menuArea, side='left'){
 		back.onclick = _=>{
 			if (side=="right"){el.style.right = "-100%"}
 			else {el.style.left = "-100%"}
-			el.dispatchEvent(new Event('submenu_close'));
+			el.close();
 		}
 		back.innerHTML = back_button.innerHTML;
 		if (el.querySelector(".menu_title")){
@@ -32,13 +32,13 @@ function swipeMenu(menuArea, side='left'){
 				menu.style.minHeight = target.scrollHeight + "px"
 				menuArea.style.minHeight = target.scrollHeight + "px"
 			}
-			target.addEventListener('submenu_close', _=> {
+			target.close = _=> {
 				menu.style.filter = ""
 				if (side=="right"){target.style.right = "-100%"}
 				else {target.style.left = "-100%"}
 				menu.style.minHeight = ""
 				menuArea.style.minHeight = ""
-			});
+			}
 		})
 		menu.querySelectorAll("li[href]").forEach(li=>{
 			if (li.getAttribute("target")){
@@ -55,11 +55,11 @@ function swipeMenu(menuArea, side='left'){
 	})
 	menuArea.exitAllSubMenus = _=>{
 		menuArea.querySelectorAll(".menu, .submenu").forEach(menu=>{
-			menu.dispatchEvent(new Event('submenu_close'));
+			menu.close();
 		})
 	}
 	menuArea.init = (name, value, change_handler = _=>{}) => {
-		let main_el = menuArea.querySelector(`.menu li[submenu='${name}']`)
+		let main_el = menuArea.querySelector(`.menu li[submenu='${name}']`) || menuArea.querySelector(`.submenu li[submenu='${name}']`)
 		if (!main_el){
 			main_el = menuArea.querySelector(`.menu li[name='${name}']`)
 			main_el.innerHTML += `: <span class='helper'>${value}</span>`
