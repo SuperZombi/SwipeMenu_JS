@@ -81,9 +81,8 @@
 }
 .swipe-menu .submenu{
 	position: absolute;
-	transition: left 0.5s;
+	transition: left 0.5s, right 0.5s;
 	top: 0;
-	left: -100%;
 }
 .back_button{
 	background: lightgrey;
